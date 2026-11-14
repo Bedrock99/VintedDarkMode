@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Vinted Dark Mode — Content Stylesheet
+   Ergänzung zum nativen Dark Theme von Vinted.
+   Verhindert FOUC (White Flash) und korrigiert hardcodierte helle Bereiche.
+   ========================================================================== */
+
+/* 1. Basis-Einstellungen für den Dark Mode */
+html[data-vinted-dark] {
+  color-scheme: dark !important;
+  background-color: rgb(15, 18, 18) !important;
+}
+
+html[data-vinted-dark] body {
+  background-color: rgb(15, 18, 18) !important;
+  color: #e5e7eb !important;
+}
+
+/* 2. Scrollbars (Firefox & WebKit) */
+html[data-vinted-dark] {
+  scrollbar-color: #3b4648 #141819;
+  scrollbar-width: thin;
+}
+
+html[data-vinted-dark]::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html[data-vinted-dark]::-webkit-scrollbar-track {
+  background: #141819;
+}
+
+html[data-vinted-dark]::-webkit-scrollbar-thumb {
+  background: #333d3f;
+  border-radius: 5px;
+  border: 2px solid #141819;
+}
+
+html[data-vinted-dark]::-webkit-scrollbar-thumb:hover {
+  background: #4a575a;
+}
+
+/* 3. Hardcodierte weiße oder hellgraue Hintergründe neutralisieren */
+html[data-vinted-dark] [class*="seller-promotion__temp-banner"],
+html[data-vinted-dark] [class*="brand-portal-layout"],
+html[data-vinted-dark] [class*="brand-portal-authentication-layout"],
+html[data-vinted-dark] [class*="u-background-white"],
+html[data-vinted-dark] [class*="banner--info"],
+html[data-vinted-dark] .web_ui__Page__page {
+  background-color: rgb(23, 28, 28) !important;
+  color: #e5e7eb !important;
+}
+
+/* 4. Sehr helle Türkis-Hintergründe (#e6fafa) abdunkeln */
+html[data-vinted-dark] .u-background-extra-light,
+html[data-vinted-dark] [class*="dropzone__overlay-background-color-primary"] {
+  background: rgb(17, 46, 51) !important;
+}
+
+/* 5. Sehr helle Erfolgs- & Garantie-Banner (#edf9f0, #edffe9) abdunkeln */
+html[data-vinted-dark] .web_ui__Cell__successLightExperimental,
+html[data-vinted-dark] [class*="electronics-verification-awareness-block"],
+html[data-vinted-dark] [class*="MobilePhonesWarrantySearchBanner"] {
+  background-color: rgb(23, 47, 32) !important;
+  border-color: rgb(42, 50, 51) !important;
+  color: #e5e7eb !important;
+}
+
+/* 6. Verifizierungs-Statusblöcke */
+html[data-vinted-dark] [class*="offline-verification-status"],
+html[data-vinted-dark] [class*="electronics-verification-status"] {
+  background-color: rgb(42, 50, 51) !important;
+  color: #e5e7eb !important;
+}
+
+/* 7. Lade-Skelette (Loading Skeletons) */
+html[data-vinted-dark] .react-loading-skeleton {
+  --base-color: rgb(35, 42, 43) !important;
+  --highlight-color: rgb(55, 65, 66) !important;
+}
+
+/* 8. Overlay über verkauften oder verborgenen Artikeln */
+html[data-vinted-dark] [class*="new-item-box__image-overlay"] {
+  background-color: rgba(15, 18, 18, 0.75) !important;
+}
+
+/* 9. Platzhalter für Bilder mit Inline-Hintergrundfarbe */
+html[data-vinted-dark] .web_ui__Image__image[style*="background-color"] {
+  background-color: rgb(42, 50, 51) !important;
+}
+
+/* 10. Formulareingaben & Autovervollständigung */
+html[data-vinted-dark] input:-webkit-autofill,
+html[data-vinted-dark] input:-webkit-autofill:hover,
+html[data-vinted-dark] input:-webkit-autofill:focus,
+html[data-vinted-dark] textarea:-webkit-autofill,
+html[data-vinted-dark] select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(23, 28, 28) inset !important;
+  -webkit-text-fill-color: #e5e7eb !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 11. Modals, Dropdowns & Menüs */
+html[data-vinted-dark] [role="dialog"],
+html[data-vinted-dark] [role="menu"],
+html[data-vinted-dark] [role="listbox"],
+html[data-vinted-dark] .web_ui__Modal__modal {
+  border-color: rgb(45, 54, 56) !important;
+}
+
+/* 12. Bild- & Icon-Schutz: Niemals invertieren */
+html[data-vinted-dark] img,
+html[data-vinted-dark] video,
+html[data-vinted-dark] picture,
+html[data-vinted-dark] canvas,
+html[data-vinted-dark] svg:not(.vds-switch-svg) {
+  filter: none !important;
+}
+
+/* 13. Sanfter Übergang beim Umschalten */
+html[data-vinted-dark] body,
+html[data-vinted-dark] header,
+html[data-vinted-dark] main,
+html[data-vinted-dark] footer {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinted Dark Mode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-wrapper">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="brand">
+        <img src="../icons/icon-32.png" alt="Vinted Dark Mode" class="brand-icon">
+        <div class="brand-text">
+          <h1>Vinted Dark Mode</h1>
+          <span class="version">v1.0.0</span>
+        </div>
+      </div>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text" id="statusIndicatorText">Aktiv</span>
+      </div>
+    </header>
+
+    <!-- Main Toggle Hero Card -->
+    <section class="hero-card">
+      <div class="hero-info">
+        <div class="hero-icon" id="heroIcon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </div>
+        <div class="hero-text">
+          <span class="hero-title" id="heroTitle">Dark Mode</span>
+          <span class="hero-subtitle" id="heroSubtitle">Augen schonen beim Stöbern</span>
+        </div>
+      </div>
+      
+      <!-- Big Toggle Switch -->
+      <label class="switch-control" for="mainToggle" title="Dark Mode umschalten">
+        <input type="checkbox" id="mainToggle">
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <!-- Settings Group -->
+    <section class="settings-card">
+      <h2 class="section-title">Header-Schalter Einstellungen</h2>
+
+      <div class="setting-row">
+        <div class="setting-label">
+          <span>Schalter im Vinted-Header</span>
+          <small>Eingebunden vor der Hilfe &amp; Sprachauswahl</small>
+        </div>
+        <label class="switch-control small" for="headerSwitchToggle">
+          <input type="checkbox" id="headerSwitchToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-label">
+          <span>Text-Beschriftung im Schalter</span>
+          <small>Zeigt „Dark“ / „Light“ im Header an</small>
+        </div>
+        <label class="switch-control small" for="labelToggle">
+          <input type="checkbox" id="labelToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Shortcut and Links -->
+    <footer class="popup-footer">
+      <div class="shortcut-hint">
+        <span class="shortcut-label">Tastenkürzel:</span>
+        <kbd class="key-badge">Alt</kbd> + <kbd class="key-badge">Shift</kbd> + <kbd class="key-badge">D</kbd>
+      </div>
+
+      <button type="button" class="btn-vinted" id="openVintedBtn">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        Vinted aufrufen
+      </button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
