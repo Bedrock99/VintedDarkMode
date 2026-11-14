@@ -1,15 +1,17 @@
 # 🌙 Vinted Dark Mode — Firefox Extension
 
-Eine elegante und performante Firefox-Erweiterung (Manifest V3), die Vinted in einen vollwertigen, augenschonenden **Dark Mode** taucht — mit einem **fest in den Header integrierten Ein-/Aus-Schalter (direkt vor der Hilfe und links neben der Sprachauswahl)**, Toolbar-Menü und Tastaturkürzel.
+Eine elegante und performante Firefox-Erweiterung (Manifest V3), die Vinted in einen vollwertigen, augenschonenden **Dark Mode** taucht — mit einem **fest in den Header integrierten Ein-/Aus-Schalter**.
+
+> **Hinweis zur Entwicklung**: Dieses Projekt wurde mit Unterstützung von **Gemini 3.8 Flash** konzipiert und entwickelt.
 
 ---
 
 ## ✨ Highlights & Features
 
 - 🔘 **Fest im Vinted-Header eingebunden (nicht fliegend)**:
-  - Sitzt direkt in der oberen Navigationsleiste von Vinted: **links neben der Sprachauswahl, unmittelbar vor dem Hilfe-Icon (`?`)**.
+  - Sitzt direkt in der oberen Navigationsleiste von Vinted: **NACH „Artikel verkaufen“ und VOR dem Hilfe-Icon (`?`)** (links neben der Sprachauswahl).
   - Passt sich nahtlos in Vinteds Design ein: Elegante Pill mit animiertem Mond-/Sonne-Icon und Schieberegler.
-  - **Kein Fliegen oder Überdecken**: Bewegt sich natürlich mit dem Header mit und verdeckt keine Profil- oder Verkaufs-Buttons.
+  - **Kein Überdecken von Inhalten**: Bewegt sich natürlich mit dem Header mit und verdeckt keine Profil-, Chat- oder Such-Elemente.
   - **Isoliert im Shadow DOM**: Kein CSS-Konflikt mit Vinteds Stylesheets und keine Störung von React / Next.js.
   - **SPA- & Hydration-Safe**: Bleibt auch bei Seitenwechseln (Katalog, Artikel, Chat, Profil) ohne Neuladen stets an der richtigen Stelle.
 - ⚡ **Kein weißer Blitz (Zero FOUC)**:
@@ -39,8 +41,8 @@ Eine elegante und performante Firefox-Erweiterung (Manifest V3), die Vinted in e
    ```text
    D:\GIT\Github\VintedDarkMode
    ```
-4. Wähle die Datei [manifest.json](file:///d:/GIT/Github/VintedDarkMode/manifest.json) (oder die Datei `dist/vinted-dark-mode-v1.0.0.zip` / `dist/vinted-dark-mode-v1.0.0.xpi`) aus und klicke auf **Öffnen**.
-5. Fertig! Öffne jetzt [vinted.de](https://www.vinted.de) — der Schalter befindet sich oben in der Leiste direkt vor der Hilfe.
+4. Wähle die Datei [manifest.json](file:///d:/GIT/Github/VintedDarkMode/manifest.json) (oder die Datei `dist/vinted-dark-mode-v1.0.0.zip`) aus und klicke auf **Öffnen**.
+5. Fertig! Öffne jetzt [vinted.de](https://www.vinted.de) — der Schalter befindet sich oben in der Leiste direkt nach „Artikel verkaufen“ und vor der Hilfe.
 
 ---
 
@@ -56,13 +58,6 @@ Eine elegante und performante Firefox-Erweiterung (Manifest V3), die Vinted in e
 
 ---
 
-## 📦 Neues Release packen
+## 📄 Lizenz
 
-```powershell
-python package.py
-```
-*oder in PowerShell:*
-```powershell
-.\package.ps1
-```
-Die fertigen Dateien landen direkt im Ordner `dist/`.
+Dieses Projekt steht unter einer freien Open-Source-Lizenz (siehe [LICENSE.md](file:///d:/GIT/Github/VintedDarkMode/LICENSE.md)). Jeder darf den Code kostenlos nutzen, anpassen und weiterverbreiten.
