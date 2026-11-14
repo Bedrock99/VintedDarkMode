@@ -1,63 +1,46 @@
-# 🌙 Vinted Dark Mode — Firefox Extension
+# 🌙 Vinted Dark Mode
 
-Eine elegante und performante Firefox-Erweiterung (Manifest V3), die Vinted in einen vollwertigen, augenschonenden **Dark Mode** taucht — mit einem **fest in den Header integrierten Ein-/Aus-Schalter**.
+Eine kompakte Firefox-Erweiterung (Manifest V3), die Vinted in einen augenschonenden **Dark Mode** taucht — mit einem integrierten Schalter direkt im Header.
 
-> **Hinweis zur Entwicklung**: Dieses Projekt wurde mit Unterstützung von **Gemini 3.8 Flash** konzipiert und entwickelt.
-
----
-
-## ✨ Highlights & Features
-
-- 🔘 **Fest im Vinted-Header eingebunden (nicht fliegend)**:
-  - Sitzt direkt in der oberen Navigationsleiste von Vinted: **NACH „Artikel verkaufen“ und VOR dem Hilfe-Icon (`?`)** (links neben der Sprachauswahl).
-  - Passt sich nahtlos in Vinteds Design ein: Elegante Pill mit animiertem Mond-/Sonne-Icon und Schieberegler.
-  - **Kein Überdecken von Inhalten**: Bewegt sich natürlich mit dem Header mit und verdeckt keine Profil-, Chat- oder Such-Elemente.
-  - **Isoliert im Shadow DOM**: Kein CSS-Konflikt mit Vinteds Stylesheets und keine Störung von React / Next.js.
-  - **SPA- & Hydration-Safe**: Bleibt auch bei Seitenwechseln (Katalog, Artikel, Chat, Profil) ohne Neuladen stets an der richtigen Stelle.
-- ⚡ **Kein weißer Blitz (Zero FOUC)**:
-  - Startet bei `document_start` und setzt den dunklen Hintergrund bereits vor dem Rendern des HTML-Bodys.
-- 🎨 **Natives Vinted-Designsystem**:
-  - Nutzt Vinteds integrierte Dark-Theme-Tokens und ergänzt diese um Korrekturen für Lade-Skelette, Aktionsbanner, Dropzones und Verifizierungs-Badges.
-  - **Bilderschutz**: Produktfotos, Profilbilder, Badges und Videos werden niemals invertiert oder verfälscht.
-- ⌨️ **Tastenkombination**:
-  - Drücke jederzeit <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>, um den Dark Mode blitzschnell umzuschalten.
-- 🧭 **Firefox Toolbar Popup**:
-  - Klicke auf das Icon in der Firefox-Symbolleiste für einen schnellen Hauptschalter und die Option, den Header-Schalter nach Wunsch ein-/auszublenden oder zu beschriften.
-- 🌍 **Vollständige Länderunterstützung**:
-  - Funktioniert auf allen Vinted-Domains: `.de`, `.fr`, `.at`, `.co.uk`, `.it`, `.es`, `.pl`, `.nl`, `.be`, `.cz`, `.lt`, `.pt`, `.se`, `.ro`, `.hu`, `.sk`, `.com` uvm.
+> **Entwicklung**: Konzipiert und entwickelt mit Unterstützung von **Gemini 3.8 Flash**.
 
 ---
 
-## 🚀 Installation in Firefox
+## ✨ Features
 
-### Methode 1: Temporär laden (für Entwicklung & Sofort-Test)
-
-1. Öffne Firefox und tippe in die Adressleiste:
-   ```text
-   about:debugging#/runtime/this-firefox
-   ```
-2. Klicke auf die Schaltfläche **„Temporäres Add-on laden…“** (*Load Temporary Add-on*).
-3. Navigiere in dieses Projektverzeichnis:
-   ```text
-   D:\GIT\Github\VintedDarkMode
-   ```
-4. Wähle die Datei [manifest.json](file:///d:/GIT/Github/VintedDarkMode/manifest.json) (oder die Datei `dist/vinted-dark-mode-v1.0.0.zip`) aus und klicke auf **Öffnen**.
-5. Fertig! Öffne jetzt [vinted.de](https://www.vinted.de) — der Schalter befindet sich oben in der Leiste direkt nach „Artikel verkaufen“ und vor der Hilfe.
+- **Schalter im Header**: Sitzt in der oberen Leiste direkt nach „Artikel verkaufen“ und vor dem Hilfe-Icon (links neben der Sprachauswahl).
+- **Kein weißer Blitz (Zero FOUC)**: Greift ab `document_start` und verhindert grelles Aufleuchten beim Laden.
+- **Natives Vinted-Design**: Nutzt Vinteds Dark-Theme-Tokens und korrigiert Lade-Skelette, Banner und Scrollbars.
+- **Bilderschutz**: Fotos, Avatare und Abzeichen bleiben in Originalfarben.
+- **Toolbar-Popup**: Schnelleinstellungen (z. B. Header-Schalter oder Textbeschriftung ein-/ausblenden).
+- **Länderunterstützung**: Funktioniert auf allen Vinted-Domains (`.de`, `.fr`, `.at`, `.co.uk`, `.it`, `.es`, `.pl` etc.).
 
 ---
 
-## 🎮 Bedienung
+## 🚀 Installation (Firefox)
 
-| Aktion | Wo? | Wie? |
-| :--- | :--- | :--- |
-| **Dark Mode umschalten** | Im Vinted-Header | Klick auf den Schalter vor der Hilfe |
-| **Tastatur-Shortcut** | Überall im Browser | <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> |
-| **Schalter im Header ausblenden** | Toolbar Popup | Option „Schalter im Vinted-Header“ deaktivieren |
-| **Text im Schalter einblenden** | Toolbar Popup | Option „Text-Beschriftung im Schalter“ aktivieren |
-| **Popup öffnen** | Firefox Symbolleiste | Klick auf das Erweiterungs-Icon |
+### Temporär testen (about:debugging)
+1. In Firefox `about:debugging#/runtime/this-firefox` aufrufen.
+2. Auf **„Temporäres Add-on laden…“** klicken.
+3. [manifest.json](file:///d:/GIT/Github/VintedDarkMode/manifest.json) oder die ZIP-Datei in `dist/` auswählen.
+4. Auf [vinted.de](https://www.vinted.de) surfen — der Schalter ist sofort aktiv.
+
+### Dauerhaft installieren (Mozilla Add-on Store)
+1. Über das [Mozilla Add-on Developer Hub](https://addons.mozilla.org/developers/) kostenlos signieren lassen.
+2. Die fertige ZIP-Datei aus dem Ordner `dist/` hochladen.
+
+---
+
+## 📦 Paketierung & Versionierung
+
+Mit einem Befehl wird das installierbare Paket (`.xpi` und `.zip`) im Ordner `dist/` erstellt:
+
+```powershell
+python package.py
+```
 
 ---
 
 ## 📄 Lizenz
 
-Dieses Projekt steht unter einer freien Open-Source-Lizenz (siehe [LICENSE.md](file:///d:/GIT/Github/VintedDarkMode/LICENSE.md)). Jeder darf den Code kostenlos nutzen, anpassen und weiterverbreiten.
+Freie Open-Source-Software (siehe [LICENSE.md](file:///d:/GIT/Github/VintedDarkMode/LICENSE.md)). Kostenlose Nutzung, Weiterentwicklung und Verbreitung für jeden erlaubt.

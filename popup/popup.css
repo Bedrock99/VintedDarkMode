@@ -339,26 +339,5 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-top: 2px;
-}
-
-.shortcut-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.key-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-  padding: 1px 5px;
-  font-family: monospace;
-  font-size: 10px;
-  color: #f3f4f6;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  padding-top: 4px;
 }

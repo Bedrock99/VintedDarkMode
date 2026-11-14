@@ -1,0 +1,60 @@
+name: Build & Release
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Build Packages (.xpi & .zip)
+        id: build
+        run: |
+          python package.py
+          VERSION=$(python -c "import json; print(json.load(open('manifest.json'))['version'])")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Determine Tag
+        id: tag_info
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            echo "tag=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "tag=v${{ steps.build.outputs.version }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag_info.outputs.tag }}
+          name: "Vinted Dark Mode ${{ steps.tag_info.outputs.tag }}"
+          body: |
+            🚀 Release für **Vinted Dark Mode ${{ steps.tag_info.outputs.tag }}**
+
+            - **`.xpi`**: Direkt in Firefox installierbares Add-on
+            - **`.zip`**: Vollständiges Paket zur Einreichung bei Mozilla Add-ons (AMO)
+          files: |
+            dist/*.xpi
+            dist/*.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

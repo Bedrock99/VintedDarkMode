@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Vinted Dark Mode",
   "version": "1.0.0",
-  "description": "Eleganter Dark Mode für Vinted mit intuitivem Schalter direkt oben auf der Website und Toolbar-Steuerung.",
+  "description": "Eleganter Dark Mode für Vinted mit integriertem Schalter im Header direkt vor der Hilfe. Spart Akku und schont die Augen. Inoffizielle Community-Erweiterung.",
   "author": "Vinted Community",
   "browser_specific_settings": {
     "gecko": {
@@ -99,13 +99,5 @@
       "run_at": "document_start",
       "all_frames": false
     }
-  ],
-  "commands": {
-    "toggle-dark-mode": {
-      "suggested_key": {
-        "default": "Alt+Shift+D"
-      },
-      "description": "Vinted Dark Mode umschalten"
-    }
-  }
+  ]
 }

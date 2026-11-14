@@ -284,8 +284,8 @@
     button.setAttribute('role', 'switch');
     button.setAttribute('aria-checked', state.enabled.toString());
     button.title = state.enabled
-      ? 'Vinted Dark Mode: Aktiviert (Klick zum Umschalten, Alt+Shift+D)'
-      : 'Vinted Dark Mode: Deaktiviert (Klick zum Umschalten, Alt+Shift+D)';
+      ? 'Vinted Dark Mode: Aktiviert (Klick zum Umschalten)'
+      : 'Vinted Dark Mode: Deaktiviert (Klick zum Umschalten)';
 
     button.innerHTML = `
       <span class="vds-icon-wrapper" id="vdsIconWrapper">
@@ -348,8 +348,8 @@
       button.className = `vds-pill ${state.enabled ? 'is-dark' : 'is-light'}`;
       button.setAttribute('aria-checked', state.enabled.toString());
       button.title = state.enabled
-        ? 'Vinted Dark Mode: Aktiviert (Klick zum Umschalten, Alt+Shift+D)'
-        : 'Vinted Dark Mode: Deaktiviert (Klick zum Umschalten, Alt+Shift+D)';
+        ? 'Vinted Dark Mode: Aktiviert (Klick zum Umschalten)'
+        : 'Vinted Dark Mode: Deaktiviert (Klick zum Umschalten)';
     }
 
     if (iconWrapper) {
