@@ -26,8 +26,7 @@ Eine kompakte Firefox-Erweiterung (Manifest V3), die Vinted in einen augenschone
 4. Auf [vinted.de](https://www.vinted.de) surfen — der Schalter ist sofort aktiv.
 
 ### Dauerhaft installieren (Mozilla Add-on Store)
-1. Über das [Mozilla Add-on Developer Hub](https://addons.mozilla.org/developers/) kostenlos signieren lassen.
-2. Die fertige ZIP-Datei aus dem Ordner `dist/` hochladen.
+https://addons.mozilla.org/de/firefox/addon/vinted-darkmode/
 
 ---
 
